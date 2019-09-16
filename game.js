@@ -6,8 +6,8 @@
 // Create the canvas for the game to display in
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
+canvas.width = 757;
+canvas.height = 710;
 document.body.appendChild(canvas);
 // Load the background image
 var bgReady = false;
@@ -95,14 +95,14 @@ var render = function () {
   }
   // Display score and time 
   ctx.fillStyle = "rgb(250, 250, 250)";
-  ctx.font = "24px Helvetica";
+  ctx.font = "30px Itim";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
   ctx.fillText("Monsters caught: " + monstersCaught, 20, 20);
   ctx.fillText("Time: " + count, 20, 50);
   // Display game over message when timer finished
   if(finished==true){
-    ctx.fillText("Game over!", 200, 220);
+    ctx.fillText("Game over !", 300, 355);
   }
   
 };
