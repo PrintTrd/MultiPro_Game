@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/mr-pixel" type="text/css"/>
     <title>Catch the monster</title>
     <style>
         body{
@@ -22,18 +21,21 @@
           text-align: center;
           height:50px;
           width:120px;
-          font-size: 1em;
           color: rgb(243, 242, 242);
           background-color:rgb(209, 102, 59);
           border-radius: 20px;
-          font-family: 'Press Start 2P', cursive;
-          font-size: 0.8em;
+          font-family: 'VTFMisterPixelRegular';
+          font-size: 1.65em;
         }
+        #canvas{
+          margin:0 auto;
+          }
     </style>
   </head>
   <body>
     <!-- <h4>Catch the monster</h4> -->
     <br></br>
+    <canvas id="canvas" width=757 height=710></canvas>
     <script src="game.js"></script>
     <br></br>
     <button id="playagain" onclick="Replay()">Replay</button>

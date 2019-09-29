@@ -1,4 +1,4 @@
-var canvas = document.createElement("canvas");
+//var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 var width = canvas.width = 757;
 var height = canvas.height = 710;
@@ -46,6 +46,8 @@ var reset = function () {
     hero.x = width/2;
     hero.y = height/2;    
   } else {
+    // hero.x = Math.min(Math.max(hero.x, 2), width);
+    // hero.y = Math.min(Math.max(hero.y, 2), height);
     hero.x = hero.x;
     hero.y = hero.y;
   }
@@ -59,15 +61,21 @@ var update = function (modifier) {
   // var y = Math.min(Math.max(y,0+80),height-90);  
   if (38 in keysDown) {
     hero.y -= hero.speed * modifier;
+    hero.y = Math.min(Math.max(hero.y, 2), height-30);
   }
   if (40 in keysDown) {
     hero.y += hero.speed * modifier;
+    hero.y = Math.min(Math.max(hero.y, 2), height-30);
+
   }
   if (37 in keysDown) {
     hero.x -= hero.speed * modifier;
+    hero.x = Math.min(Math.max(hero.x, 2), width-30);
   }
   if (39 in keysDown) {
     hero.x += hero.speed * modifier;
+    hero.x = Math.min(Math.max(hero.x, 2), width-30);
+
   }
 
   if (
@@ -94,14 +102,14 @@ var render = function () {
   }
 
   ctx.fillStyle = "rgb(250, 250, 250)";
-  ctx.font = "30px Itim";
+  ctx.font = "30px VTFMisterPixelRegular";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
   ctx.fillText("Monsters caught: " + monstersCaught, 20, 20);
   ctx.fillText("Time: " + count, 20, 50);
 
   if(finished==true){
-    ctx.fillText("Game over !", (width/2)-70, height/2);
+    ctx.fillText("Game over !", (width/2)-72, height/2);
   }
 };
 
