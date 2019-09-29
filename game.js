@@ -51,7 +51,7 @@ var reset = function () {
     hero.x = hero.x;
     hero.y = hero.y;
   }
-  // Place the monster somewhere on the canvas randomly
+  // P lace the monster somewhere on the canvas randomly
   monster.x = 32 + (Math.random() * (canvas.width - 64));
   monster.y = 32 + (Math.random() * (canvas.height - 64));
 };
@@ -61,21 +61,19 @@ var update = function (modifier) {
   // var y = Math.min(Math.max(y,0+80),height-90);  
   if (38 in keysDown) {
     hero.y -= hero.speed * modifier;
-    hero.y = Math.min(Math.max(hero.y, 2), height-30);
+    hero.y = Math.min(Math.max(hero.y, 3), height-40);
   }
   if (40 in keysDown) {
     hero.y += hero.speed * modifier;
-    hero.y = Math.min(Math.max(hero.y, 2), height-30);
-
+    hero.y = Math.min(Math.max(hero.y, 10), height-50);
   }
   if (37 in keysDown) {
     hero.x -= hero.speed * modifier;
-    hero.x = Math.min(Math.max(hero.x, 2), width-30);
+    hero.x = Math.min(Math.max(hero.x, 10), width-40);
   }
   if (39 in keysDown) {
     hero.x += hero.speed * modifier;
-    hero.x = Math.min(Math.max(hero.x, 2), width-30);
-
+    hero.x = Math.min(Math.max(hero.x, 10), width-40);
   }
 
   if (
@@ -105,7 +103,7 @@ var render = function () {
   ctx.font = "30px VTFMisterPixelRegular";
   ctx.textAlign = "left";
   ctx.textBaseline = "top";
-  ctx.fillText("Monsters caught: " + monstersCaught, 20, 20);
+  ctx.fillText("Monsters catch: " + monstersCaught, 20, 20);
   ctx.fillText("Time: " + count, 20, 50);
 
   if(finished==true){

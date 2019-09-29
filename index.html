@@ -7,19 +7,30 @@
     <style>
         body{
             -webkit-user-select: none;
-            margin:40px;
-            text-align: center;
-            background-image: url("images/bg.jpg");
+            margin: 0px;
             background-position: 0% 0%;
             /* background-size: 20%; */
             /*background-size: cover;*/
             min-height: 100%; /*ทำให้เวลาพื้นหลังแล้วมันสูงเต็มหน้าจอ*/
             /* animation: bg 40s infinite linear;
             background-color: #ffce85; */
+            text-align: center;
+            background-image: url("images/bg.jpg");
+            -webkit-animation: slide 20s linear infinite;
+            width: 100%;
+        }
+
+        @-webkit-keyframes slide {
+            from { background-position: 0 0; }
+            to { background-position: 400px 0; }
         }
         @keyframes bg{
             from{background-position: 0% 0%}
             to{background-position: -100% -88%}
+        }
+        @keyframes swing{
+            from{transform: rotate(1deg);}
+            to{transform: rotate(-1deg);}
         }
         .button {
           display: inline-block;
@@ -62,22 +73,20 @@
           right: 0;
         }
 
-        .center {
-            text-align: center;
-            margin-top: 1em;
-        }
-
         h1 {
             font-family: 'VTFMisterPixelRegular', cursive;
             font-size: 200px;
             color: #2c456d;
+            //position: absolute;
+            transition: all .1s;
+            animation: swing .3s infinite alternate;
         }
 
 </style>
 </head>
 <body>
 
-    <div class="center">
+    <div class="bg-animated">
         <h1>Catch the monster</h1>
         <a href="catch.html" class="button" style="vertical-align:middle"><span>Start !</span></a>
     </div>
