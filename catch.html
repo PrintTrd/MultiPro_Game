@@ -2,17 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link href="https://jabont.com/jayss/jayss.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
     <title>Catch the monster</title>
     <style>
         body{
-            margin-top: 25px;
-            text-align: center;
-            min-height: 100%;
-            background-color: #ffce85;
-            background-image: url("images/bg.jpg")
+          -webkit-user-select: none;
+          margin-top: 25px;
+          text-align: center;
+          min-height: 100%;
+          background-color: #ffce85;
+          background-image: url("images/bg.jpg")
         }
-
+        /* h4{
+          font-family: 'Press Start 2P', cursive;
+          color: #2c456d;
+        } */
         #playagain {
           text-align: center;
           height:50px;
@@ -21,11 +26,14 @@
           color: rgb(243, 242, 242);
           background-color:rgb(209, 102, 59);
           border-radius: 20px;
-          font-family: 'Itim', cursive, sans-serif;
+          font-family: 'Press Start 2P', cursive;
+          font-size: 0.8em;
         }
     </style>
   </head>
   <body>
+    <!-- <h4>Catch the monster</h4> -->
+    <br></br>
     <script src="game.js"></script>
     <br></br>
     <button id="playagain" onclick="Replay()">Replay</button>
