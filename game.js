@@ -44,21 +44,21 @@ var reset = function () {
   // Reset player's position to centre of canvas
   if (state == 0) {
     hero.x = width/2;
-    hero.y = height/2;    
+    hero.y = height/2;
   } else {
     // hero.x = Math.min(Math.max(hero.x, 2), width);
     // hero.y = Math.min(Math.max(hero.y, 2), height);
     hero.x = hero.x;
     hero.y = hero.y;
   }
-  // P lace the monster somewhere on the canvas randomly
+  // Place the monster somewhere on the canvas randomly
   monster.x = 32 + (Math.random() * (canvas.width - 64));
   monster.y = 32 + (Math.random() * (canvas.height - 64));
 };
 
 var update = function (modifier) {
   // var x = Math.min(Math.max(x,0+20),width-80);
-  // var y = Math.min(Math.max(y,0+80),height-90);  
+  // var y = Math.min(Math.max(y,0+80),height-90);
   if (38 in keysDown) {
     hero.y -= hero.speed * modifier;
     hero.y = Math.min(Math.max(hero.y, 3), height-40);
@@ -115,8 +115,7 @@ var count = 30;
 var finished = false;
 var counter =function(){
   count=count-1;
-  // when count reaches 0 clear the timer, hide monster and
-  // hero and finish the game
+  // when count reaches 0 clear the timer, hide monster and hero then finish the game
     if (count <= 0)
     {
        clearInterval(counter);
@@ -147,6 +146,6 @@ var main = function () {
 // Cross-browser support for requestAnimationFrame
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
-// Let's play this game!
+
 reset();
 main();
